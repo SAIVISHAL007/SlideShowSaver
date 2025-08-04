@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+<title>Apple Project Slideshow</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+background-color: #000;
+font-family: Arial, sans-serif;
+height: 100vh;
+overflow: hidden;
+}
+.slideshow-container {
+position: relative;
+width: 100vw;
+height: 100vh;
+}
+.slide {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: none;
+text-align: center;
+}
+.slide img {
+max-width: 80vw;
+max-height: 70vh;
+border-radius: 10px;
+box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+object-fit: contain;
+}
+.caption {
+margin-top: 20px;
+color: #fff;
+font-size: 1.3em;
+background: rgba(0, 0, 0, 0.5);
+padding: 8px 20px;
+border-radius: 5px;
+}
+.fade {
+animation: fadeEffect 1s ease-in-out;
+}
+@keyframes fadeEffect {
+from { opacity: 0.2; }
+to { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<div class="slideshow-container">
+<div class="slide fade">
+<img src="App store.png" alt="Apple Product 1">
+<div class="caption">Apple App Store</div>
+</div>
+<div class="slide fade">
+<img src="Apple intellgence.png" alt="Apple Product 2">
+<div class="caption">Apple intellgence</div>
+</div>
+<div class="slide fade">
+<img src="MacBook Air.png" alt="Apple Product 3">
+<div class="caption">Apple Mac Book</div>
+</div>
+<div class="slide fade">
+<img src="iphone 16.jpg" alt="Apple Product 4">
+<div class="caption">Apple iPhone 16</div>
+</div>
+<div class="slide fade">
+<img src="iphone 16 pro.jpg" alt="Apple Product 5">
+<div class="caption">Apple iPhone 16 pro</div>
+</div>
+<div class="slide fade">
+<img src="Watch.png" alt="Apple Product 6">
+<div class="caption">Apple Watch series</div>
+</div>
+<div class="slide fade">
+<img src="Ipad pro.png" alt="Apple Product 6">
+<div class="caption">Apple iPad pro</div>
+</div>
+</div>
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+function showSlides() {
+slides.forEach(slide => slide.style.display = "none");
+slideIndex++;
+if (slideIndex > slides.length) slideIndex = 1;
+slides[slideIndex - 1].style.display = "block";
+setTimeout(showSlides, 3000);
+}
+showSlides();
+</script>
+</body>
+</html>
